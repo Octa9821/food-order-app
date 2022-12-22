@@ -8,8 +8,10 @@ const AvailableMeals = (props) => {
             <Card>
                 <ul className={styles.ul}>
                     {props.meals.map((item) => (
-                        <div key={Math.random()}>
+                        <div>
                             <MealItem
+                                key={item.id}
+                                id={item.id}
                                 name={item.name}
                                 description={item.description}
                                 price={item.price}
