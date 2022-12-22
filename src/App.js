@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Layout/Header';
+import imgStyles from './components/Layout/Header.module.css';
+import img from './resources/images/meals.jpg';
+import mealsList from './resources/mealsList';
+import Meals from './components/Meals/Meals';
+import Cart from './components/Cart/Cart';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Cart />
+            <Header></Header>
+            <div className={imgStyles['main-image']}>
+                <img src={img} alt="Meals Header" />
+            </div>
+            <main>
+                <Meals meals={mealsList}></Meals>
+            </main>
+        </>
+    );
 }
 
 export default App;
